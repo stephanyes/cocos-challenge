@@ -40,7 +40,7 @@ async function bootstrap() {
       .setTitle(`${project.name}`)
       .setDescription(`${project.description}`)
       .setVersion(`${project.version}`)
-      .setExternalDoc('Documentacion externa', `${project.documentation}`)
+      .setExternalDoc('Cocos Capital', `${project.documentation}`)
       .build();
     const documentFactory = () => SwaggerModule.createDocument(app, config);
     SwaggerModule.setup(`${swagger.path}`, app, documentFactory);

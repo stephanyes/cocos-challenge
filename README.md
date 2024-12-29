@@ -168,6 +168,15 @@ Se incluyen pruebas unitarias y funcionales para validar el comportamiento de la
 
 ---
 
+## Documentación de la API - Swagger
+
+La API cuenta con documentación interactiva generada con Swagger.
+Una vez que la aplicación esté en ejecución, acceda a **http://localhost:8080/docs** para visualizar y probar los endpoints disponibles.
+
+```
+  configurar variables SWAGGER_ENABLED y SWAGGER_PATH 
+```
+
 ## Estructura del Proyecto
 
 ```
