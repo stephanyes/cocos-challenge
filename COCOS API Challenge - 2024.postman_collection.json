@@ -254,6 +254,44 @@
 						"description": "Create a new instrument."
 					},
 					"response": []
+				},
+				{
+					"name": "Get Instrument by Ticker",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/instruments/ticker/DYCA",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instruments",
+								"ticker",
+								"DYCA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Instrument by Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/instruments/type/moneda",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"instruments",
+								"type",
+								"moneda"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -373,9 +411,21 @@
 			"item": [
 				{
 					"name": "Get Portfolio by User ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1,\n    \"totalValue\": 889480,\n    \"availableFunds\": 734350,\n    \"positions\": [\n        {\n            \"instrumentId\": 54,\n            \"ticker\": \"METR\",\n            \"quantity\": 500,\n            \"marketValue\": 114500,\n            \"dailyReturnPercent\": -1.293103448275862\n        },\n        {\n            \"instrumentId\": 31,\n            \"ticker\": \"BMA\",\n            \"quantity\": -10,\n            \"marketValue\": -15020,\n            \"dailyReturnPercent\": -1.1842105263157896\n        },\n        {\n            \"instrumentId\": 2,\n            \"ticker\": \"CAPX\",\n            \"quantity\": 10,\n            \"marketValue\": 18650,\n            \"dailyReturnPercent\": -2.7632950990615224\n        },\n        {\n            \"instrumentId\": 47,\n            \"ticker\": \"PAMP\",\n            \"quantity\": 40,\n            \"marketValue\": 37000,\n            \"dailyReturnPercent\": 0.43431053203040176\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "{{base_url}}/portfolio/1",
 							"host": [
