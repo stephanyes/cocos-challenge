@@ -129,15 +129,15 @@ Se incluyen pruebas unitarias y funcionales para validar el comportamiento de la
 ### 2. Búsqueda de Activos
 - **GET** `/instruments/ticker/:ticker`
   - Busca un activo por su ticker específico.
-    ```json
-    [
+  ```json
+  [
       {
-        "id": 1,
-        "ticker": "DYCA",
-        "name": "Dycasa S.A.",
-        "type": "ACCIONES"
+          "id": 1,
+          "ticker": "DYCA",
+          "name": "Dycasa S.A.",
+          "type": "ACCIONES"
       }
-    ]
+  ]
   ```
 - **GET** `/instruments/type/:type`
   - Busca activos por tipo (ej. ACCIONES, BONOS, etc.).
