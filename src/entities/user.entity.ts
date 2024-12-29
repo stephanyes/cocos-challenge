@@ -4,15 +4,15 @@ import { Order } from './order.entity';
 
 @Entity('users')
 export class User {
-  @ApiProperty({ description: 'Unique identifier for the user' })
+  @ApiProperty({ description: 'User ID' })
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ApiProperty({ description: 'Email address of the user' })
+  @ApiProperty({ description: 'Email del user' })
   @Column()
   email: string;
 
-  @ApiProperty({ description: 'Account number associated with the user' })
+  @ApiProperty({ description: 'Numero de cuenta del usuario' })
   @Column()
   accountnumber: number;
 

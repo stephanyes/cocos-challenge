@@ -5,19 +5,19 @@ import { Order } from './order.entity';
 
 @Entity('instruments')
 export class Instrument {
-  @ApiProperty({ description: 'Unique identifier for the instrument' })
+  @ApiProperty({ description: 'Instrument ID' })
   @PrimaryGeneratedColumn()
   id: number;
 
-  @ApiProperty({ description: 'Ticker symbol of the instrument' })
+  @ApiProperty({ description: 'Ticker symbol [DYCA, MTR, BHIP]' })
   @Column()
   ticker: string;
 
-  @ApiProperty({ description: 'Name of the instrument' })
+  @ApiProperty({ description: 'Nombre del instrumento' })
   @Column()
   name: string;
 
-  @ApiProperty({ description: 'Type of the instrument (e.g., stock, bond)' })
+  @ApiProperty({ description: 'Tipo de instrumento [ACCIONES, MONEDA] ' })
   @Column()
   type: string;
 

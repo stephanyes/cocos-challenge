@@ -1,6 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, Column } from "typeorm";
-import { Instrument } from "./instrument.entity";
-import { User } from "./user.entity";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
+  Column,
+} from 'typeorm';
+import { Instrument } from './instrument.entity';
+import { User } from './user.entity';
 
 @Entity('orders')
 export class Order {

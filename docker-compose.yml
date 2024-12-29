@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  local:
+    build:
+      context: .
+    image: cocos-challenge
+    volumes:
+      - .:/app  # Monta todo el proyecto (incluyendo package.json y node_modules)
+      - /app/node_modules  # Usa las node_modules del contenedor
+    container_name: cocos-challenge
+    env_file:
+      - ./.env
+    networks:
+      - cocos-network
+    ports:
+      - "3000:3000"
+    tty: true
+    restart: always
+    entrypoint: ["npm", "run", "start:dev"]
+
+networks:
+  default:
+    name: cocos-network
+  cocos-network:
+    name: cocos-network

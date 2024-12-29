@@ -15,11 +15,20 @@ module.exports = {
     node: true,
     jest: true,
   },
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['.eslintrc.js', "**/__tests__/**"],
   rules: {
+    '@typescript-eslint/no-empty-object-type': "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    '@typescript-eslint/no-duplicate-enum-values': 'off',
+    '@typescript-eslint/no-empty-object-type': "off",
+    '@typescript-eslint/no-array-constructor': "off",
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-extra-non-null-assertion': "off",
+    "@typescript-eslint/no-misused-new": "off",
+    '@typescript-eslint/no-namespace': "off",
+    "@typescript-eslint/no-require-imports": "off"
   },
 };

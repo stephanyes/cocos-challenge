@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Instrument } from '../entities/instrument.entity';
+import { Instrument } from '../entities';
 
 @Injectable()
 export class InstrumentService {
@@ -15,7 +15,9 @@ export class InstrumentService {
   }
 
   async findOne(id: number): Promise<Instrument> {
-    const instrument = await this.instrumentRepository.findOne({ where: { id } });
+    const instrument = await this.instrumentRepository.findOne({
+      where: { id },
+    });
     if (!instrument) {
       throw new NotFoundException(`Instrument with ID ${id} not found`);
     }
@@ -27,7 +29,10 @@ export class InstrumentService {
     return this.instrumentRepository.save(newInstrument);
   }
 
-  async update(id: number, instrumentData: Partial<Instrument>): Promise<Instrument> {
+  async update(
+    id: number,
+    instrumentData: Partial<Instrument>,
+  ): Promise<Instrument> {
     await this.instrumentRepository.update(id, instrumentData);
     const updatedInstrument = await this.findOne(id);
     return updatedInstrument;
@@ -48,9 +53,13 @@ export class InstrumentService {
   }
 
   async findByTicker(ticker: string): Promise<Instrument> {
-    const instrument = await this.instrumentRepository.findOne({ where: { ticker: ticker.toUpperCase() } });
+    const instrument = await this.instrumentRepository.findOne({
+      where: { ticker: ticker.toUpperCase() },
+    });
     if (!instrument) {
-      throw new NotFoundException(`Instrument with ticker ${ticker.toUpperCase()} not found`);
+      throw new NotFoundException(
+        `Instrument with ticker ${ticker.toUpperCase()} not found`,
+      );
     }
     return instrument;
   }

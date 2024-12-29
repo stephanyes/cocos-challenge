@@ -1,5 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, ManyToOne, JoinColumn, Column } from "typeorm";
-import { Instrument } from "./instrument.entity";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
+  Column,
+} from 'typeorm';
+import { Instrument } from './instrument.entity';
 
 @Entity('marketdata')
 export class MarketData {
@@ -10,11 +16,11 @@ export class MarketData {
   @JoinColumn({ name: 'instrumentid' })
   instrument: Instrument;
 
-  @Column()
-  high: number;
+  @Column({ type: 'float', nullable: false })
+  high: number | null;
 
-  @Column()
-  low: number;
+  @Column({ type: 'float', nullable: false })
+  low: number | null;
 
   @Column()
   open: number;

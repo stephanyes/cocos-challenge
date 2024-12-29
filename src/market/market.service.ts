@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, Between } from 'typeorm';
-import { MarketData } from '../entities/market.entity';
+import { MarketData } from '../entities';
 
 @Injectable()
 export class MarketService {
@@ -34,7 +34,10 @@ export class MarketService {
     return this.marketRepository.save(newMarketData);
   }
 
-  async update(id: number, marketData: Partial<MarketData>): Promise<MarketData> {
+  async update(
+    id: number,
+    marketData: Partial<MarketData>,
+  ): Promise<MarketData> {
     await this.marketRepository.update(id, marketData);
     return this.findOne(id);
   }
